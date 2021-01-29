@@ -57,7 +57,7 @@ func getProcs() ([]Proc, error) {
 		}
 		proc := Proc{
 			Pid:         pid,
-			CommandName: process.Comm,
+			CommandName: getGroup(process.Args),
 			CPU:         cpu,
 			Mem:         mem,
 			FullCommand: process.Args,

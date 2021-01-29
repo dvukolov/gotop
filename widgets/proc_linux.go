@@ -33,7 +33,7 @@ func getProcs() ([]Proc, error) {
 		}
 		proc := Proc{
 			Pid:         pid,
-			CommandName: strings.TrimSpace(line[11:61]),
+			CommandName: getGroup(line[74:]),
 			FullCommand: line[74:],
 			CPU:         cpu,
 			Mem:         mem,
